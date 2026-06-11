@@ -1,6 +1,6 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
-import { groqClient } from "../lib/groq.ts";
+import { groqClient } from "../lib/groq.js";
 import multer from "multer";
 import { toFile } from "groq-sdk";
 
@@ -8,7 +8,7 @@ export const transcribeRouter = Router();
 
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit
+  limits: { fileSize: 100 * 1024 * 1024 }, 
   fileFilter: (req, file, cb) => {
     const allowed = [
       "audio/webm",
@@ -43,9 +43,9 @@ transcribeRouter.post(
 
       const transcription = await groqClient.audio.transcriptions.create({
         file: audioFile,
-        model: "whisper-large-v3-turbo", // fastest Groq Whisper model
+        model: "whisper-large-v3-turbo", 
         response_format: "json",
-        language: "en", // remove this line to enable auto-detect
+        language: "en",
       });
 
       console.log(transcription);
