@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import { Router } from "express";
-import { groqClient } from "../lib/groq.ts";
+import { groqClient } from "../lib/groq.js";
 
 export const chatRouter = Router();
 

@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node --esm src/index.ts",
-    "start": "node dist/index.js",
-    "build": "tsc"
+    "dev": "tsx watch src/index.t",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
