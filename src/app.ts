@@ -6,7 +6,7 @@ import { transcribeRouter } from './routes/route.transcribe.js';
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: `${process.env.BASE_URL}` }));
 app.use(express.json());
 
 // checking if server is running
